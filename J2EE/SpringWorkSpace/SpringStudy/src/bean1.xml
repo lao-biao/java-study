@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--配置User类对象创建-->
+    <bean id="user" class="com.spring5.User"/>
+    <!--set方法注入属性-->
+    <bean id="book" class="com.spring5.Book">
+        <!--使用property完成属性注入-->
+        <property name="name" value="Spring5"/>
+    </bean>
+    <!--有参构造方法注入属性-->
+    <bean id="order" class="com.spring5.Order">
+        <constructor-arg name="name" value="Food"/>
+        <constructor-arg name="address" value="China"/>
+    </bean>
+    <!--使用p名称空间注入-->
+    <bean id="b" class="com.spring5.Book" p:name="Spring5">
+    </bean>
+    <bean id="c" class="com.spring5.Book">
+        <property name="name">
+            <value>
+                <![CDATA[<<value>>]]>
+            </value>
+        </property>
+    </bean>
+</beans>

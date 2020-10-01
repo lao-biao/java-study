@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>用户注册界面</title>
+	<style>
+		/*去除所有的内边距和外边距*/
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		/*设置所有输入框的样式*/
+		td input{
+			border-radius: 4px;
+			border: 1px solid;
+			/*设置输入框为单线*/
+			border-collapse: collapse;
+			color: blue;
+			font-family: 楷体;
+		}
+		/*设置多行文字输入框的样式*/
+		#remark{
+			border-radius: 8px;
+			border: solid 1px;
+			/*禁止拉伸*/
+			resize: none;
+			color: blue;	
+			font-size: 16px;
+			font-family: 楷体;
+		}
+		/*设置单选框的样式*/
+		#edu ,#edu > option{
+			border: 1px solid;
+			border-radius: 4px;
+			font-size: 16px;
+			color: blue;
+			font-family: 楷体;
+		}
+
+		/*设置表格内文字的样式*/
+		table{
+			font-size: 16px;
+			color: blue;
+			font-family: 楷体;
+		}
+	</style>
+</head>
+
+<body>
+	<div align="center">
+		<div style="border: 1px solid;width: 400px;height: 500px;border-radius: 6px">
+			<table>
+				<caption>用户注册</caption>
+				<tr>
+					<td align="right">用户名:</td>
+					<td colspan="4"><input type="text" name="username" /></td>
+				</tr>
+				<tr>
+					<td align="right">密码:</td>
+					<td colspan="4"><input type="password" name="password" /></td>
+				</tr>
+				<tr>
+					<td align="right">重复密码:</td>
+					<td colspan="4"><input type="password" name="confirmPwd" /></td>
+				</tr>
+				<tr>
+					<td align="right">性别:</td>
+					<td colspan="2">
+						<input type="radio" name="sex" id="male" value="male" checked="checked" />
+						<label for="male">男</label>
+					</td>
+					<td colspan="2">
+						<input type="radio" name="sex" id="female" value="female" />
+						<label for="female">女</label>
+					</td>
+				</tr>
+				<tr>
+					<td align="right">出生日期:</td>
+					<td colspan="4"><input type="date" name="birthday" /></td>
+				</tr>
+				<tr>
+					<td align="right">爱好:</td>
+					<td><input type="checkbox" name="fav" id="singing" value="singing" />
+						<label for="singing">唱歌</label>
+					</td>
+					<td>
+						<input type="checkbox" name="fav" id="swimming" value="swimming" />
+						<label for="swimming">游泳</label>
+					</td>
+					<td>
+						<input type="checkbox" name="fav" id="basketball" value="basketball" />
+						<label for="basketball">篮球</label>
+					</td>
+					<td>
+						<input type="checkbox" name="fav" id="running" value="running" />
+						<label for="running">跑步</label>
+					</td>
+				</tr>
+				<tr>
+					<td align="right">教育经历:</td>
+					<td colspan="4">
+						<select id="edu">
+							<option value="primary">小学</option>
+							<option value="middle">初中</option>
+							<option value="high">高中</option>
+							<option value="university" selected="selected">大学</option>
+							<option value="master">硕士</option>
+							<option value="docter">博士</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align="right">备注:</td>
+					<td colspan="4">
+						<textarea id="remark" rows="5"></textarea>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>

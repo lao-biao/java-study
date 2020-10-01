@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.mapper.UserMapper">
+    <insert id="save" parameterType="user">
+        insert into user_mb
+        values (#{uid}, #{uname}, #{password}, #{birthday})
+    </insert>
+
+    <select id="findById" parameterType="int" resultType="user">
+        select *
+        from user_mb
+        where uid = #{uid}
+    </select>
+
+    <select id="findAll" resultType="user">
+        select *
+        from user_mb
+    </select>
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <!--
+        开启组件扫描
+        1、如果有多个包用逗号隔开
+        2、可以写多个包的上层目录
+    -->
+    <context:component-scan base-package="com.spring5.bean,com.spring5.service,com.spring5.dao">
+
+    </context:component-scan>
+    <!--示例一-->
+    <!--
+        use-default-filters="false" 不适用默认的filter
+        <context:include-filter type="" expression=""/> 设置扫描哪些内容
+    -->
+    <!--<context:component-scan base-package="com.spring5.service"-->
+    <!--                        use-default-filters="false">-->
+    <!--    <context:include-filter type="annotation"-->
+    <!--                            expression="org.springframework.stereotype.Service"/>-->
+    <!--</context:component-scan>-->
+    <!--示例二-->
+    <!--
+        <context:exclude-filter type="" expression=""/>设置哪些内容不进行扫描
+    -->
+    <!--<context:component-scan base-package="com.spring5.service">-->
+    <!--    <context:exclude-filter type="annotation"-->
+    <!--                            expression="org.springframework.stereotype.Service"/>-->
+    <!--</context:component-scan>-->
+</beans>

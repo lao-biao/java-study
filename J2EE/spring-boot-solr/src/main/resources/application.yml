@@ -1,0 +1,10 @@
+# 端口
+server:
+  port: 8000
+
+spring:
+  data:
+    # 配置solr
+    solr:
+      host: http://localhost:8983/solr/example_core
+

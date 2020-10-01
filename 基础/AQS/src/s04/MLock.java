@@ -1,0 +1,45 @@
+package s04;
+
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+
+public class MLock implements Lock {
+
+    private volatile int i = 0;  // 0被释放，1锁定
+
+    @Override
+    public void lock() {
+        synchronized (this) {
+            i = 1;      // 只是锁定了当前的this对象，其他线程仍能执行
+        }
+    }
+
+    @Override
+    public void lockInterruptibly() throws InterruptedException {
+
+    }
+
+    @Override
+    public boolean tryLock() {
+        return false;
+    }
+
+    @Override
+    public boolean tryLock(long time, TimeUnit unit) throws InterruptedException {
+        return false;
+    }
+
+    @Override
+    public void unlock() {
+        synchronized (this) {
+            i = 0;
+        }
+    }
+
+    @Override
+    public Condition newCondition() {
+        return null;
+    }
+}

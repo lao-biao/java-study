@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Service和UserDao对象创建-->
+    <bean id="us" class="com.spring5.service.UserService">
+        <!--注入UserDao对象-->
+        <property name="ud" ref="udi">
+        </property>
+    </bean>
+
+    <bean id="udi" class="com.spring5.dao.UserDaoImpl">
+
+    </bean>
+</beans>

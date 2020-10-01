@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <!--集合类型属性注入-->
+    <util:list id="bookList">
+        <value>C</value>
+        <value>C++</value>
+        <value>Java</value>
+
+    </util:list>
+
+    <bean id="book" class="com.spring5.Book">
+        <property name="list" ref="bookList">
+
+        </property>
+    </bean>
+</beans>

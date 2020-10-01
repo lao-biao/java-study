@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.mapper.UserMapper">
+    <!--查询操作-->
+    <select id="findByCondition" parameterType="user" resultType="user">
+        select *
+        from user
+        <where>
+            <if test="uid!=0">
+                and uid = #{uid}
+            </if>
+            <if test="uname!=null">
+                and uname = #{uname}
+            </if>
+            <if test="password!=null">
+                and password = #{password}
+            </if>
+        </where>
+    </select>
+
+    <sql id="selectUser">
+        select *
+        from user
+    </sql>
+
+    <select id="findByIds" resultType="user" parameterType="int">
+        <!--select * from user-->
+        <include refid="selectUser"/>
+        <where>
+            <foreach collection="list" open="uid in(" close=")" item="uid" separator=",">
+                #{uid}
+            </foreach>
+        </where>
+
+    </select>
+
+</mapper>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery控制复选框</title>
+    <!-- 引入jQuery文件 -->
+    <script type="text/javascript" src="static/js/jquery-1.11.3/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+<ul>
+    <li><input type="checkbox" name="hobby" value="swim">swim</li>
+    <li><input type="checkbox" name="hobby" value="run">run</li>
+    <li><input type="checkbox" name="hobby" value="sing">sing</li>
+</ul>
+<input type="button" value="全选" id="selectAll">
+<input type="button" value="全不选" id="unSelectAll">
+<input type="button" value="反选" id="reverseSelectAll">
+</body>
+
+</html>
+<script type="text/javascript">
+    // ready时加载
+    $(document).ready(function () {
+        // 控制复选框全选
+        $("#selectAll").click(function () {
+            // 修改复选框为全选
+            $('input[name=hobby]').each(function () {
+                this.checked = true;
+            });
+        });
+
+        // 全不选
+        $("#unSelectAll").click(function () {
+            $('input[name=hobby]').each(function () {
+                // 设置为不选状态
+                this.checked = false;
+            });
+        });
+
+        // 反选
+        $("#reverseSelectAll").click(function () {
+            $('input[name=hobby]').each(function () {
+                // 设置为相反状态
+                this.checked = !this.checked;
+            });
+        });
+    });
+</script>

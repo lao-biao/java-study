@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<fonts>
+    <font id="0">
+        <name>宋体</name>
+        <size>18</size>
+    </font>
+    <font id="1">
+        <name>微软雅黑</name>
+        <size>12</size>
+    </font>
+    <font id="2">
+        <name>正楷</name>
+        <size>16</size>
+    </font>
+
+</fonts>

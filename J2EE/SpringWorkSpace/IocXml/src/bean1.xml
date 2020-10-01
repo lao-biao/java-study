@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--集合类型属性注入-->
+    <bean id="stu" class="com.spring5.Stu">
+        <!--数组类型属性注入-->
+        <property name="array">
+            <array>
+                <value>Java</value>
+                <value>SQL</value>
+            </array>
+        </property>
+        <!--list类型属性注入-->
+        <property name="list">
+            <list>
+                <value>a</value>
+                <value>b</value>
+            </list>
+        </property>
+        <!--map类型属性注入-->
+        <property name="map">
+            <map>
+                <entry key="Java" value="java"/>
+                <entry key="Python" value="python"/>
+            </map>
+        </property>
+        <!--set类型属性注入-->
+        <property name="set">
+            <set>
+                <value>Java</value>
+                <value>MySQL</value>
+            </set>
+        </property>
+        <!--list类型属性注入-->
+        <property name="courseList">
+            <list>
+                <ref bean="course1"></ref>
+                <ref bean="course2"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="course1" class="com.spring5.Course">
+        <property name="name" value="Spring5"></property>
+    </bean>
+    <bean id="course2" class="com.spring5.Course">
+        <property name="name" value="MyBatis"></property>
+    </bean>
+
+</beans>

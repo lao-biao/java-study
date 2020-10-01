@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--自动注入-->
+    <bean id="emp" class="com.spring5.autowire.Emp" autowire="byName">
+        <!--<bean id="emp" class="com.spring5.autowire.Emp" autowire="byType"></bean>-->
+        <!--<property name="dept" ref="dept"/>-->
+    </bean>
+    <bean id="dept" class="com.spring5.autowire.Dept"></bean>
+
+</beans>
